@@ -1,4 +1,3 @@
-import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
@@ -72,7 +71,7 @@ export default function Home() {
                 <span className="text-4xl font-bold">SJ</span>
               </div>
               <p className="text-gray-400 italic">
-                "Building digital solutions with passion and precision"
+                &ldquo;Building digital solutions with passion and precision&rdquo;
               </p>
             </div>
           </div>
@@ -112,9 +111,9 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-6 bg-gray-900/50">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-3xl font-bold mb-8">Let's Work Together</h3>
+          <h3 className="text-3xl font-bold mb-8">Let&rsquo;s Work Together</h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Get in touch and let's discuss how we can 
+            Ready to bring your ideas to life? Get in touch and let&rsquo;s discuss how we can 
             create something amazing together.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 rounded-full transition-all font-medium">
