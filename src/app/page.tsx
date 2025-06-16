@@ -1,102 +1,139 @@
 import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
+      {/* Navigation */}
+      <nav className="p-6 border-b border-gray-700">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <div className="text-xl font-bold">ShiJing TongYue</div>
+          <div className="flex space-x-6 text-sm">
+            <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
+            <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
+            <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            ShiJing TongYue
+          </h1>
+          <h2 className="text-xl md:text-2xl text-gray-300 mb-4">
+            Shanghai ShiJing TongYue Network Technology Co., Ltd.
+          </h2>
+          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            独立开发 · Independent Development
+          </p>
+          <div className="text-2xl md:text-3xl font-light text-blue-400 mb-12">
+            One Developer, Infinite Possibilities
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-4 justify-center">
+            <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors font-medium">
+              Get Started
+            </button>
+            <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-16 px-6 bg-gray-900/50">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-12">About Us</h3>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h4 className="text-xl font-semibold mb-4 text-blue-400">Independent Development</h4>
+              <p className="text-gray-300 mb-6">
+                We are a lean, agile one-person company specializing in innovative web and mobile solutions. 
+                Our independent approach allows for rapid iteration, personalized service, and creative freedom.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-gray-300">Full-Stack Development</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-gray-300">Custom Solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                  <span className="text-gray-300">Rapid Prototyping</span>
+                </div>
+              </div>
+            </div>
+            <div className="text-center">
+              <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center">
+                <span className="text-4xl font-bold">SJ</span>
+              </div>
+              <p className="text-gray-400 italic">
+                "Building digital solutions with passion and precision"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-12">Services</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors">
+              <div className="text-blue-400 text-2xl mb-4">🌐</div>
+              <h4 className="text-xl font-semibold mb-3">Web Development</h4>
+              <p className="text-gray-400">
+                Modern, responsive websites and web applications using the latest technologies.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors">
+              <div className="text-blue-400 text-2xl mb-4">📱</div>
+              <h4 className="text-xl font-semibold mb-3">Mobile Apps</h4>
+              <p className="text-gray-400">
+                Cross-platform mobile applications that deliver exceptional user experiences.
+              </p>
+            </div>
+            <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors">
+              <div className="text-blue-400 text-2xl mb-4">⚡</div>
+              <h4 className="text-xl font-semibold mb-3">Consulting</h4>
+              <p className="text-gray-400">
+                Technical consulting and architecture design for your digital projects.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-16 px-6 bg-gray-900/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-8">Let's Work Together</h3>
+          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Ready to bring your ideas to life? Get in touch and let's discuss how we can 
+            create something amazing together.
+          </p>
+          <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 rounded-full transition-all font-medium">
+            Start a Project
+          </button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-gray-700">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <div className="font-bold">上海诗璟同悦网络科技有限公司</div>
+            <div className="text-sm text-gray-400">Shanghai ShiJing TongYue Network Technology Co., Ltd.</div>
+          </div>
+          <div className="text-sm text-gray-400">
+            © 2025 ShiJing TongYue. All rights reserved.
+          </div>
+        </div>
       </footer>
     </div>
   );
