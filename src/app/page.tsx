@@ -6,9 +6,21 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="text-xl font-bold">ShiJing TongYue</div>
           <div className="flex space-x-6 text-sm">
-            <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
-            <a href="#services" className="hover:text-blue-400 transition-colors">Services</a>
-            <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+            <a href="#about" className="hover:text-blue-400 transition-colors">
+              About
+            </a>
+            <a
+              href="#services"
+              className="hover:text-blue-400 transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="#contact"
+              className="hover:text-blue-400 transition-colors"
+            >
+              Contact
+            </a>
           </div>
         </div>
       </nav>
@@ -19,16 +31,16 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
             ShiJing TongYue
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-4">
+          <h2 className="text-xl md:text-2xl text-gray-300 mb-8">
             Shanghai ShiJing TongYue Network Technology Co., Ltd.
           </h2>
-          <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-            独立开发 · Independent Development
-          </p>
-          <div className="text-2xl md:text-3xl font-light text-blue-400 mb-12">
-            One Developer, Infinite Possibilities
+          <div className="text-2xl md:text-3xl font-light text-blue-400 mb-6">
+            Indie Hacker · 独立开发者
           </div>
-          
+          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
+            Building digital products with passion and precision
+          </p>
+
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors font-medium">
               View Our Work
@@ -46,10 +58,14 @@ export default function Home() {
           <h3 className="text-3xl font-bold text-center mb-12">About Us</h3>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h4 className="text-xl font-semibold mb-4 text-blue-400">Independent Development</h4>
+              <h4 className="text-xl font-semibold mb-4 text-blue-400">
+                Independent Development
+              </h4>
               <p className="text-gray-300 mb-6">
-                We are a lean, agile one-person company specializing in innovative web and mobile solutions. 
-                Our independent approach allows for rapid iteration, personalized service, and creative freedom.
+                We are a lean, agile one-person company specializing in
+                innovative web and mobile solutions. Our independent approach
+                allows for rapid iteration, personalized service, and creative
+                freedom.
               </p>
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
@@ -71,7 +87,8 @@ export default function Home() {
                 <span className="text-4xl font-bold">SJ</span>
               </div>
               <p className="text-gray-400 italic">
-                &ldquo;Building digital solutions with passion and precision&rdquo;
+                &ldquo;Building digital solutions with passion and
+                precision&rdquo;
               </p>
             </div>
           </div>
@@ -87,21 +104,24 @@ export default function Home() {
               <div className="text-blue-400 text-2xl mb-4">🌐</div>
               <h4 className="text-xl font-semibold mb-3">Web Development</h4>
               <p className="text-gray-400">
-                Modern, responsive websites and web applications using the latest technologies.
+                Modern, responsive websites and web applications using the
+                latest technologies.
               </p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors">
               <div className="text-blue-400 text-2xl mb-4">📱</div>
               <h4 className="text-xl font-semibold mb-3">Mobile Apps</h4>
               <p className="text-gray-400">
-                Cross-platform mobile applications that deliver exceptional user experiences.
+                Cross-platform mobile applications that deliver exceptional user
+                experiences.
               </p>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg border border-gray-700 hover:border-blue-500 transition-colors">
               <div className="text-blue-400 text-2xl mb-4">⚡</div>
               <h4 className="text-xl font-semibold mb-3">Consulting</h4>
               <p className="text-gray-400">
-                Technical consulting and architecture design for your digital projects.
+                Technical consulting and architecture design for your digital
+                projects.
               </p>
             </div>
           </div>
@@ -113,8 +133,8 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h3 className="text-3xl font-bold mb-8">Let&rsquo;s Work Together</h3>
           <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Get in touch and let&rsquo;s discuss how we can 
-            create something amazing together.
+            Ready to bring your ideas to life? Get in touch and let&rsquo;s
+            discuss how we can create something amazing together.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 px-8 py-3 rounded-full transition-all font-medium">
             Start a Project
@@ -127,7 +147,9 @@ export default function Home() {
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <div className="font-bold">上海诗璟同悦网络科技有限公司</div>
-            <div className="text-sm text-gray-400">Shanghai ShiJing TongYue Network Technology Co., Ltd.</div>
+            <div className="text-sm text-gray-400">
+              Shanghai ShiJing TongYue Network Technology Co., Ltd.
+            </div>
           </div>
           <div className="text-sm text-gray-400">
             © 2025 ShiJing TongYue. All rights reserved.
