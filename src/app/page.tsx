@@ -31,10 +31,10 @@ export default function Home() {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors font-medium">
-              Start Your Project
+              View Our Work
             </button>
             <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
-              About Developer
+              Contact Us
             </button>
           </div>
         </div>
