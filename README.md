@@ -70,7 +70,7 @@ ShijingTY Technologies is an independent software development company focused on
 ## 联系我们 / Contact
 
 - **Website**: [shijingty.com](https://shijingty.com)
-- **Email**: contact@shijingty.com
+- **Email**: support@shijingty.com
 - **GitHub**: [@code4life49](https://github.com/code4life49)
 
 ---
