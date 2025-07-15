@@ -34,3 +34,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 公司简介
+
+ShijingTY Technologies is an indie software company focused on creating innovative digital products and applications based on original ideas. As an independent developer, we primarily build and launch our own apps and digital solutions, while also offering custom development services to select clients and partners.
