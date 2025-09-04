@@ -15,9 +15,9 @@ export default function MobileMenu({ className }: MobileMenuProps) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const menuItems = [
+    { href: "#home", label: t("nav.home") },
+    { href: "#products", label: t("nav.products") },
     { href: "#about", label: t("nav.about") },
-    { href: "#services", label: t("nav.services") },
-    { href: "#projects", label: t("nav.projects") },
     { href: "#contact", label: t("nav.contact") },
   ];
 
