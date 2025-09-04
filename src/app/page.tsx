@@ -28,7 +28,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent leading-relaxed">
             ShiJing TongYue
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-300 mb-8">
@@ -42,12 +42,18 @@ export default function Home() {
           </p>
 
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors font-medium">
-              View Our Work
-            </button>
-            <button className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors">
-              Contact Us
-            </button>
+            <a
+              href="#projects"
+              className="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full transition-colors font-medium text-center"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-full transition-colors text-center"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
       </section>
@@ -123,6 +129,140 @@ export default function Home() {
                 Technical consulting and architecture design for your digital
                 projects.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="projects" className="py-16 px-6 bg-gray-900/30">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-12">My Projects</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Project 1 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-all hover:scale-105">
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                <span className="text-white text-lg font-medium">
+                  Project Screenshot
+                </span>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2">
+                  E-Commerce Platform
+                </h4>
+                <p className="text-gray-400 mb-4">
+                  A modern e-commerce solution built with Next.js and Stripe
+                  integration.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-600 text-xs rounded-full">
+                    Next.js
+                  </span>
+                  <span className="px-3 py-1 bg-green-600 text-xs rounded-full">
+                    Node.js
+                  </span>
+                  <span className="px-3 py-1 bg-purple-600 text-xs rounded-full">
+                    MongoDB
+                  </span>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="#"
+                    className="text-blue-400 hover:text-blue-300 text-sm"
+                  >
+                    Live Demo →
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-gray-300 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-all hover:scale-105">
+              <div className="h-48 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center">
+                <span className="text-white text-lg font-medium">
+                  Project Screenshot
+                </span>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2">
+                  Task Management App
+                </h4>
+                <p className="text-gray-400 mb-4">
+                  A productivity app with real-time collaboration features.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-600 text-xs rounded-full">
+                    React
+                  </span>
+                  <span className="px-3 py-1 bg-yellow-600 text-xs rounded-full">
+                    Firebase
+                  </span>
+                  <span className="px-3 py-1 bg-red-600 text-xs rounded-full">
+                    Redux
+                  </span>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="#"
+                    className="text-blue-400 hover:text-blue-300 text-sm"
+                  >
+                    Live Demo →
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-gray-300 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-blue-500 transition-all hover:scale-105">
+              <div className="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                <span className="text-white text-lg font-medium">
+                  Project Screenshot
+                </span>
+              </div>
+              <div className="p-6">
+                <h4 className="text-xl font-semibold mb-2">AI Chat Bot</h4>
+                <p className="text-gray-400 mb-4">
+                  An intelligent chatbot powered by OpenAI API with custom
+                  training.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-600 text-xs rounded-full">
+                    Python
+                  </span>
+                  <span className="px-3 py-1 bg-green-600 text-xs rounded-full">
+                    OpenAI
+                  </span>
+                  <span className="px-3 py-1 bg-orange-600 text-xs rounded-full">
+                    FastAPI
+                  </span>
+                </div>
+                <div className="flex gap-3">
+                  <a
+                    href="#"
+                    className="text-blue-400 hover:text-blue-300 text-sm"
+                  >
+                    Live Demo →
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-gray-300 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
