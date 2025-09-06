@@ -23,19 +23,19 @@ export function useLanguage() {
     };
   }, []);
 
-  const t = (key: string) => {
+  const t = (key: string): string => {
     const keys = key.split(".");
-    let value: any = i18n[language];
-    
+    let value: unknown = i18n[language] as unknown;
+
     for (const k of keys) {
-      if (value && typeof value === "object" && k in value) {
-        value = value[k];
+      if (value && typeof value === "object" && k in (value as Record<string, unknown>)) {
+        value = (value as Record<string, unknown>)[k];
       } else {
-        return key; // 如果找不到翻译，返回原key
+        return key; // 找不到翻译，返回原key
       }
     }
-    
-    return value;
+
+    return typeof value === "string" ? value : key;
   };
 
   return {
