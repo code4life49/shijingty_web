@@ -1,12 +1,9 @@
 "use client";
-
-import { useEffect } from "react";
 import ThemeToggle from "./components/ThemeToggle";
 import Button from "./components/Button";
-import Card, { CardHeader, CardTitle, CardDescription, CardContent } from "./components/Card";
 import MobileMenu from "./components/MobileMenu";
 import LanguageToggle from "./components/LanguageToggle";
-import ProductCard from "./components/ProductCard";
+import ProductSwitcher from "./components/ProductSwitcher";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Home() {
@@ -78,146 +75,30 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Philosophy Section - 核心理念展示 */}
+      {/* Hero (Minimal) */}
       <section id="home" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
-          {/* 主标题区域 - 简化版 */}
-          <div className="text-center mb-16">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-light text-muted-foreground mb-4">
-              {t("hero.philosophy")}
-            </h1>
+          <div className="text-center space-y-3">
+            <h1 className="text-2xl sm:text-3xl font-light tracking-tight">诗璟同悦</h1>
+            <p className="text-muted-foreground text-base sm:text-lg">{t("hero.philosophy")}</p>
           </div>
-
-          {/* 核心价值观 */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
-            <div className="group">
-              <Card className="h-full text-center p-8 hover:shadow-lg transition-all duration-300 border-2 border-primary/10 hover:border-primary/30 hover:scale-105">
-                <div className="text-primary text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">🚫</div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">{t("products.philosophy.noAds")}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("products.philosophy.noAdsDesc")}
-                </p>
-              </Card>
-            </div>
-            
-            <div className="group">
-              <Card className="h-full text-center p-8 hover:shadow-lg transition-all duration-300 border-2 border-primary/10 hover:border-primary/30 hover:scale-105">
-                <div className="text-primary text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">✨</div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">{t("products.philosophy.minimalUI")}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("products.philosophy.minimalUIDesc")}
-                </p>
-              </Card>
-            </div>
-            
-            <div className="group">
-              <Card className="h-full text-center p-8 hover:shadow-lg transition-all duration-300 border-2 border-primary/10 hover:border-primary/30 hover:scale-105">
-                <div className="text-primary text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">�</div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">{t("products.philosophy.practical")}</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {t("products.philosophy.practicalDesc")}
-                </p>
-              </Card>
-            </div>
+          <div className="mt-10 grid grid-cols-3 gap-3">
+            <div className="text-center text-sm text-muted-foreground">{t("products.philosophy.noAds")}</div>
+            <div className="text-center text-sm text-muted-foreground">{t("products.philosophy.minimalUI")}</div>
+            <div className="text-center text-sm text-muted-foreground">{t("products.philosophy.practical")}</div>
           </div>
         </div>
       </section>
 
-      {/* Products Showcase - 产品展示 */}
+      {/* Products Showcase - 轮播展示 */}
       <section id="products" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-6">{t("products.title")}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t("products.subtitle")}
-            </p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">{t("products.title")}</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">{t("products.subtitle")}</p>
           </div>
 
-          {/* 产品列表 - 全宽度展示 */}
-          <div className="space-y-12">
-            {products.map((product, index) => (
-              <div 
-                key={index} 
-                className={`group bg-background rounded-2xl border border-border overflow-hidden hover:shadow-xl transition-all duration-500 ${
-                  index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-                }`}
-              >
-                <div className={`lg:flex ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''} items-center`}>
-                  {/* 产品图片 */}
-                  <div className="lg:w-1/2 p-8 lg:p-12 flex justify-center">
-                    <div className="relative w-64 h-96 lg:w-80 lg:h-[500px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="text-6xl lg:text-8xl opacity-30">📱</div>
-                      </div>
-                      {product.comingSoon && (
-                        <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-medium">
-                          {t("products.comingSoon")}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* 产品信息 */}
-                  <div className="lg:w-1/2 p-8 lg:p-12 space-y-6">
-                    <div>
-                      <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
-                        {product.title}
-                      </h3>
-                      <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-6">
-                        {product.description}
-                      </p>
-                    </div>
-
-                    {/* 功能特色 */}
-                    <div className="grid grid-cols-2 gap-3">
-                      {product.features.map((feature, featureIndex) => (
-                        <div 
-                          key={featureIndex}
-                          className="flex items-center space-x-2 text-sm text-muted-foreground"
-                        >
-                          <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* 下载按钮 */}
-                    {!product.comingSoon && (
-                      <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                        {product.appStoreUrl && (
-                          <a
-                            href={product.appStoreUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center space-x-3 px-6 py-3 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors duration-200 border border-gray-200 hover:border-gray-300"
-                          >
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                            </svg>
-                            <span className="font-medium">App Store</span>
-                          </a>
-                        )}
-                        {product.googlePlayUrl && (
-                          <a
-                            href={product.googlePlayUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center space-x-3 px-6 py-3 bg-white hover:bg-gray-50 text-black rounded-lg transition-colors duration-200 border border-gray-200 hover:border-gray-300"
-                          >
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                            </svg>
-                            <span className="font-medium">Google Play</span>
-                          </a>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProductSwitcher products={products} />
 
           {/* 产品特色说明 */}
           <div className="bg-background rounded-2xl p-8 lg:p-12 border border-border mt-16">
