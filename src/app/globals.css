@@ -2,49 +2,49 @@
 
 :root {
   /* 浅色主题 */
-  --background: #F8F9FA;
-  --foreground: #1A1A1A;
-  --card: #FFFFFF;
-  --card-foreground: #1A1A1A;
-  --popover: #FFFFFF;
-  --popover-foreground: #1A1A1A;
-  --primary: #667EEA;
-  --primary-foreground: #FFFFFF;
-  --secondary: #F3F4F6;
-  --secondary-foreground: #1A1A1A;
-  --muted: #F3F4F6;
-  --muted-foreground: #6B7280;
-  --accent: #F3F4F6;
-  --accent-foreground: #1A1A1A;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
-  --border: #E5E7EB;
-  --input: #FFFFFF;
-  --ring: #667EEA;
+  --background: #f8f9fa;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
+  --primary: #667eea;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #1a1a1a;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #1a1a1a;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #ffffff;
+  --ring: #667eea;
   --radius: 16px;
 }
 
 .dark {
   /* 深色主题 */
-  --background: #0F1419;
-  --foreground: #F1F5F9;
-  --card: #1E293B;
-  --card-foreground: #F1F5F9;
-  --popover: #1E293B;
-  --popover-foreground: #F1F5F9;
-  --primary: #8B9EFF;
-  --primary-foreground: #FFFFFF;
+  --background: #0f1419;
+  --foreground: #f1f5f9;
+  --card: #1e293b;
+  --card-foreground: #f1f5f9;
+  --popover: #1e293b;
+  --popover-foreground: #f1f5f9;
+  --primary: #8b9eff;
+  --primary-foreground: #ffffff;
   --secondary: #334155;
-  --secondary-foreground: #F1F5F9;
+  --secondary-foreground: #f1f5f9;
   --muted: #334155;
-  --muted-foreground: #94A3B8;
+  --muted-foreground: #94a3b8;
   --accent: #334155;
-  --accent-foreground: #F1F5F9;
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --accent-foreground: #f1f5f9;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
   --border: #334155;
-  --input: #1E293B;
-  --ring: #8B9EFF;
+  --input: #1e293b;
+  --ring: #8b9eff;
 }
 
 * {
@@ -54,12 +54,162 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", "Microsoft YaHei", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for anchored headings below fixed/sticky header spacing */
+:target {
+  scroll-margin-top: 96px;
+}
+
+/* Numbered headings within articles: H2 => 1., H3 => 1.1 */
+article.prose {
+  counter-reset: h2;
+}
+article.prose h2 {
+  counter-reset: h3;
+}
+article.prose h2::before {
+  counter-increment: h2;
+  content: counter(h2) ". ";
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+article.prose h3::before {
+  counter-increment: h3;
+  content: counter(h2) "." counter(h3) " ";
+  color: var(--muted-foreground);
+  font-weight: 600;
+}
+
+/* Heading anchors */
+article.prose h2[id],
+article.prose h3[id] {
+  scroll-margin-top: 112px;
+  position: relative;
+}
+article.prose h2[id] a.anchor,
+article.prose h3[id] a.anchor {
+  opacity: 0;
+  position: absolute;
+  left: -1.25em;
+  top: 0.1em;
+  transition: opacity 0.15s ease;
+  text-decoration: none;
+  color: var(--muted-foreground);
+}
+article.prose h2[id]:hover a.anchor,
+article.prose h3[id]:hover a.anchor {
+  opacity: 0.9;
+}
+
+/* --- Prose fallback (works even if typography plugin is not active) --- */
+article.prose {
+  color: var(--foreground);
+  font-size: 17px;
+  line-height: 1.5;
+}
+article.prose > :first-child {
+  margin-top: 0 !important;
+}
+article.prose > :last-child {
+  margin-bottom: 0 !important;
+}
+article.prose h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 2.25rem 0 1.25rem;
+}
+article.prose h2 {
+  font-size: 1.75rem;
+  line-height: 1.35;
+  font-weight: 700;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--border);
+  margin: 2.75rem 0 1.25rem;
+}
+article.prose h3 {
+  font-size: 1.375rem;
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+}
+article.prose h4 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+article.prose p {
+  margin: 0.08rem 0;
+}
+article.prose a {
+  color: var(--primary);
+  text-decoration: none;
+}
+article.prose a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+article.prose ul,
+article.prose ol {
+  padding-left: 2rem;
+  margin: 0.12rem 0;
+}
+article.prose li {
+  margin: 0.06rem 0;
+}
+article.prose hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0.25rem 0;
+}
+article.prose blockquote {
+  border-left: 4px solid var(--primary);
+  background: var(--muted);
+  padding: 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 2rem 0;
+}
+article.prose code {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: var(--primary);
+}
+article.prose pre {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: auto;
+}
+article.prose table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+article.prose th {
+  background: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.75rem;
+  font-weight: 600;
+}
+article.prose td {
+  border: 1px solid var(--border);
+  padding: 0.75rem;
 }
 
 /* 自定义滚动条 */

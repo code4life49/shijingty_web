@@ -12,6 +12,7 @@ export default function Home() {
   // 示例产品数据 - 您可以根据实际情况修改
   const products = [
     {
+      slug: "smart-ledger",
       title: "智能记账助手",
       description: "简单易用的个人财务管理应用，帮助您轻松追踪收支，制定预算计划，实现财务目标。",
       imageUrl: "/api/placeholder/300/600", // 这里可以替换为实际的应用截图
@@ -21,6 +22,7 @@ export default function Home() {
       comingSoon: false,
     },
     {
+      // 未配置 slug 则回退到通用隐私/条款页
       title: "专注时间管理",
       description: "基于番茄工作法的时间管理工具，提高工作效率，培养专注习惯，让时间更有价值。",
       imageUrl: "/api/placeholder/300/600",

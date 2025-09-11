@@ -71,8 +71,10 @@ export default function FeedbackPage() {
 
       {productFromQuery ? (
         <div className="mb-6 rounded-lg border border-border bg-muted/20 p-4">
-          <div className="text-sm text-muted-foreground">
-            {t("feedbackPage.product")}: <span className="font-medium text-foreground">{productFromQuery}</span>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className="text-base">🏷️</span>
+            <span>{t("feedbackPage.product")}:</span>
+            <span className="font-medium text-foreground">{productFromQuery}</span>
           </div>
         </div>
       ) : null}
@@ -109,18 +111,12 @@ export default function FeedbackPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label className="block text-sm mb-2">{t("feedbackPage.type")}</label>
-            <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-md border border-border bg-background px-3 py-2">
-              <option value="feedback">{t("feedbackPage.typeFeedback")}</option>
-              <option value="complaint">{t("feedbackPage.typeComplaint")}</option>
-            </select>
-          </div>
-          <div>
-            <label className="block text-sm mb-2">{t("feedbackPage.product")}</label>
-            <input value={product} onChange={(e) => setProduct(e.target.value)} className="w-full rounded-md border border-border bg-background px-3 py-2" />
-          </div>
+        <div>
+          <label className="block text-sm mb-2">{t("feedbackPage.type")}</label>
+          <select value={type} onChange={(e) => setType(e.target.value)} className="w-full rounded-md border border-border bg-background px-3 py-2">
+            <option value="feedback">{t("feedbackPage.typeFeedback")}</option>
+            <option value="complaint">{t("feedbackPage.typeComplaint")}</option>
+          </select>
         </div>
 
         <div>

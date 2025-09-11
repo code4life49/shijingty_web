@@ -5,6 +5,7 @@ import Card from "./Card";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export type ShowcaseProduct = {
+  slug?: string;
   title: string;
   description: string;
   imageUrl?: string;
@@ -137,11 +138,11 @@ export default function ProductSwitcher({ products }: ProductSwitcherProps) {
             {/* Legal & Feedback */}
             <div className="pt-4 mt-2 border-t border-border/60">
               <div className="flex flex-wrap items-center gap-2 text-xs">
-                <a href="/privacy" className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-muted/40 hover:bg-muted/60 border border-border/60 text-muted-foreground hover:text-foreground transition-colors">
+                <a href={`${current?.slug ? `/${current.slug}/privacy?lang=${language}` : `/privacy?lang=${language}`}`} className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-muted/40 hover:bg-muted/60 border border-border/60 text-muted-foreground hover:text-foreground transition-colors">
                   <span className="text-[13px]">🔒</span>
                   <span>{t("legal.privacy")}</span>
                 </a>
-                <a href="/terms" className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-muted/40 hover:bg-muted/60 border border-border/60 text-muted-foreground hover:text-foreground transition-colors">
+                <a href={`${current?.slug ? `/${current.slug}/terms?lang=${language}` : `/terms?lang=${language}`}`} className="inline-flex items-center gap-1 rounded-md px-2.5 py-1.5 bg-muted/40 hover:bg-muted/60 border border-border/60 text-muted-foreground hover:text-foreground transition-colors">
                   <span className="text-[13px]">📄</span>
                   <span>{t("legal.terms")}</span>
                 </a>

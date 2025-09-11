@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,18 +25,15 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
@@ -45,9 +42,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#667EEA" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#8B9EFF" media="(prefers-color-scheme: dark)" />
       </head>
-      <body className="antialiased bg-background text-foreground transition-colors duration-200">
-        {children}
-      </body>
+      <body className="antialiased bg-background text-foreground transition-colors duration-200">{children}</body>
     </html>
   );
 }
