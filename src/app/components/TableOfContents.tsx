@@ -2,26 +2,29 @@
 
 import { useHeadings } from "./useHeadings";
 
-function withNumbers(items: ReturnType<typeof useHeadings>["toc"]) {
+type TocItem = ReturnType<typeof useHeadings>["toc"][number];
+type NumberedTocItem = TocItem & { number: string };
+
+function withNumbers(items: ReturnType<typeof useHeadings>["toc"]): NumberedTocItem[] {
   let h2 = 0;
   let h3 = 0;
-  return items.map((h) => {
+  return items.map((h): NumberedTocItem => {
     if (h.level === 2) {
       h2 += 1;
       h3 = 0;
-      return { ...h, number: `${h2}.` } as any;
+      return { ...h, number: `${h2}.` };
     }
     if (h.level === 3) {
       h3 += 1;
-      return { ...h, number: `${h2}.${h3}` } as any;
+      return { ...h, number: `${h2}.${h3}` };
     }
-    return { ...h, number: "" } as any;
+    return { ...h, number: "" };
   });
 }
 
 export default function TableOfContents() {
   const { toc, activeId } = useHeadings();
-  const numbered = withNumbers(toc) as Array<(typeof toc)[number] & { number: string }>;
+  const numbered = withNumbers(toc);
 
   if (toc.length === 0) return null;
   return (

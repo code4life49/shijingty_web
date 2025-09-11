@@ -2,6 +2,7 @@ import LegalLayout from "@/app/components/LegalLayout";
 import MDXWrapper from "@/app/components/MDXWrapper";
 import { getProductBySlug, products } from "@/data/products";
 import { legalLoaders } from "@/content/legal";
+import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ product: string }>; searchParams: Promise<{ lang?: string }> };
 
@@ -15,11 +16,11 @@ export default async function ProductPrivacyPage({ params, searchParams }: Props
   const lang = (langRaw === "en" ? "en" : "zh") as "zh" | "en";
   const product = getProductBySlug(slug);
   if (!product) {
-    // Next will show 404 for unknown product
-    return null as any;
+    // Unknown product -> 404
+    notFound();
   }
 
-  const loaders = (legalLoaders as any)[slug]?.privacy as { zh: () => Promise<any>; en: () => Promise<any> } | undefined;
+  const loaders = (legalLoaders as typeof legalLoaders)[slug as keyof typeof legalLoaders]?.privacy;
   const load = loaders?.[lang] ?? loaders?.zh ?? loaders?.en;
   if (!load) {
     return (
@@ -29,7 +30,7 @@ export default async function ProductPrivacyPage({ params, searchParams }: Props
     );
   }
 
-  const loaderId = `${slug}-privacy-${lang}`;
+  const loaderId = `${slug}-privacy-${lang}` as `${string}-privacy-${"zh" | "en"}`;
   const pageTitle = lang === "zh" ? `${product.name} · 隐私政策` : `${product.name} · Privacy Policy`;
   const subTitle = lang === "zh" ? "本页面说明本应用的隐私实践。" : "This page describes the app's privacy practices.";
 

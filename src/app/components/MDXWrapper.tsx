@@ -8,30 +8,30 @@ interface MDXWrapperProps {
 }
 
 export default function MDXWrapper({ loaderId, fallback }: MDXWrapperProps) {
-  const [Mod, setMod] = useState<ComponentType<any> | null>(null);
+  const [Mod, setMod] = useState<ComponentType | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadMDX() {
       try {
-        let module;
+        let mod: { default: ComponentType };
         switch (loaderId) {
           case "smart-ledger-privacy-zh":
-            module = await import("@/content/legal/smart-ledger/privacy.zh.mdx");
+            mod = await import("@/content/legal/smart-ledger/privacy.zh.mdx");
             break;
           case "smart-ledger-privacy-en":
-            module = await import("@/content/legal/smart-ledger/privacy.en.mdx");
+            mod = await import("@/content/legal/smart-ledger/privacy.en.mdx");
             break;
           case "smart-ledger-terms-zh":
-            module = await import("@/content/legal/smart-ledger/terms.zh.mdx");
+            mod = await import("@/content/legal/smart-ledger/terms.zh.mdx");
             break;
           case "smart-ledger-terms-en":
-            module = await import("@/content/legal/smart-ledger/terms.en.mdx");
+            mod = await import("@/content/legal/smart-ledger/terms.en.mdx");
             break;
           default:
             throw new Error(`Unknown loader ID: ${loaderId}`);
         }
-        setMod(() => module.default);
+        setMod(() => mod.default);
         setLoading(false);
       } catch (error) {
         console.error("Failed to load MDX:", error);

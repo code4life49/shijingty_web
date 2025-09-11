@@ -1,3 +1,5 @@
+// Type helpers are inferred from imports in pages; no extra helpers needed here.
+
 export const legalLoaders = {
   "smart-ledger": {
     privacy: {
@@ -12,3 +14,5 @@ export const legalLoaders = {
 } as const;
 
 export type LegalDoc = keyof (typeof legalLoaders)["smart-ledger"];
+
+export type LegalLoaders = typeof legalLoaders;

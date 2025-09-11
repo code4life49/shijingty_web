@@ -24,7 +24,7 @@ export default function FeedbackPage() {
       const prod = url.searchParams.get("product") || "";
       if (lang === "zh" || lang === "en") {
         // update local state, persist and broadcast
-        setLanguage(lang as any);
+        setLanguage(lang);
         try {
           localStorage.setItem("language", lang);
           window.dispatchEvent(new CustomEvent("languageChange", { detail: lang } as CustomEventInit));
@@ -56,9 +56,9 @@ export default function FeedbackPage() {
       setEmail("");
       setProduct("");
       setMessage("");
-    } catch (err: any) {
+    } catch (err: unknown) {
       setOk(false);
-      setError(err?.message || "Error");
+      setError(err instanceof Error ? err.message : "Error");
     } finally {
       setLoading(false);
     }

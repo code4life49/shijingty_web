@@ -9,7 +9,6 @@ export default function ReadingProgress() {
     function onScroll() {
       const article = document.querySelector("article.article, article.prose");
       if (!article) return setProgress(0);
-      const rect = article.getBoundingClientRect();
       const total = article.scrollHeight - window.innerHeight;
       // Amount scrolled within article relative to top of page
       const scrolled = Math.min(Math.max(window.scrollY - (article as HTMLElement).offsetTop, 0), total);
