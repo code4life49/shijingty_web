@@ -14,16 +14,16 @@ export type ProductEntry = {
 
 export const products: ProductEntry[] = [
   {
-    slug: "smart-ledger",
-    name: "智能记账助手",
-    shortName: "记账助手",
+    slug: "delaybuy",
+    name: "DelayBuy",
+    shortName: "DelayBuy",
     contactEmail: "contact@shijingty.com",
-    appStoreUrl: "https://apps.apple.com/app/example",
-    googlePlayUrl: "https://play.google.com/store/apps/details?id=example",
+    appStoreUrl: "https://apps.apple.com/app/delaybuy",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.shijingty.delaybuy",
     legalFlags: {
-      analytics: ["Apple App Analytics"],
-      sdks: [],
-      permissions: ["网络访问"],
+      analytics: ["Apple App Analytics", "Google Analytics"],
+      sdks: ["Firebase", "RevenueCat"],
+      permissions: ["网络访问", "本地存储", "推送通知"],
     },
   },
 ];

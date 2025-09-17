@@ -9,34 +9,17 @@ import { useLanguage } from "@/hooks/useLanguage";
 export default function Home() {
   const { t } = useLanguage();
 
-  // 示例产品数据 - 您可以根据实际情况修改
+  // DelayBuy 产品数据
   const products = [
     {
-      slug: "smart-ledger",
-      title: "智能记账助手",
-      description: "简单易用的个人财务管理应用，帮助您轻松追踪收支，制定预算计划，实现财务目标。",
+      slug: "delaybuy",
+      title: "DelayBuy",
+      description: "智能延迟购买助手，帮助您理性消费。通过延迟购买机制和冲动干预提醒，让您做出更明智的消费决策，避免冲动购物，培养健康的消费习惯。",
       imageUrl: "/api/placeholder/300/600", // 这里可以替换为实际的应用截图
-      appStoreUrl: "https://apps.apple.com/app/example",
-      googlePlayUrl: "https://play.google.com/store/apps/details?id=example",
-      features: ["智能分类", "预算管理", "数据可视化", "云端同步"],
+      appStoreUrl: "https://apps.apple.com/app/delaybuy",
+      googlePlayUrl: "https://play.google.com/store/apps/details?id=com.shijingty.delaybuy",
+      features: ["延迟购买机制", "冲动干预提醒", "消费决策记录", "节省金额统计", "智能分析激励"],
       comingSoon: false,
-    },
-    {
-      // 未配置 slug 则回退到通用隐私/条款页
-      title: "专注时间管理",
-      description: "基于番茄工作法的时间管理工具，提高工作效率，培养专注习惯，让时间更有价值。",
-      imageUrl: "/api/placeholder/300/600",
-      appStoreUrl: "https://apps.apple.com/app/example2",
-      googlePlayUrl: "https://play.google.com/store/apps/details?id=example2",
-      features: ["番茄计时", "任务管理", "统计报告", "专注提醒"],
-      comingSoon: false,
-    },
-    {
-      title: "创意灵感收集",
-      description: "随时随地记录灵感和想法，支持文字、图片、语音等多种形式，让创意不再流失。",
-      imageUrl: "/api/placeholder/300/600",
-      features: ["多格式记录", "标签分类", "云端同步", "快速搜索"],
-      comingSoon: true,
     },
   ];
 

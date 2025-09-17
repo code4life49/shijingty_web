@@ -11,6 +11,16 @@ export const legalLoaders = {
       en: () => import("./smart-ledger/terms.en.mdx"),
     },
   },
+  "delaybuy": {
+    privacy: {
+      zh: () => import("./delaybuy/privacy.zh.mdx"),
+      en: () => import("./delaybuy/privacy.en.mdx"),
+    },
+    terms: {
+      zh: () => import("./delaybuy/terms.zh.mdx"),
+      en: () => import("./delaybuy/terms.en.mdx"),
+    },
+  },
 } as const;
 
 export type LegalDoc = keyof (typeof legalLoaders)["smart-ledger"];
