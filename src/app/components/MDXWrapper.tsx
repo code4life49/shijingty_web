@@ -16,17 +16,17 @@ export default function MDXWrapper({ loaderId, fallback }: MDXWrapperProps) {
       try {
         let mod: { default: ComponentType };
         switch (loaderId) {
-          case "smart-ledger-privacy-zh":
-            mod = await import("@/content/legal/smart-ledger/privacy.zh.mdx");
+          case "delaybuy-privacy-zh":
+            mod = await import("@/content/legal/delaybuy/privacy.zh.mdx");
             break;
-          case "smart-ledger-privacy-en":
-            mod = await import("@/content/legal/smart-ledger/privacy.en.mdx");
+          case "delaybuy-privacy-en":
+            mod = await import("@/content/legal/delaybuy/privacy.en.mdx");
             break;
-          case "smart-ledger-terms-zh":
-            mod = await import("@/content/legal/smart-ledger/terms.zh.mdx");
+          case "delaybuy-terms-zh":
+            mod = await import("@/content/legal/delaybuy/terms.zh.mdx");
             break;
-          case "smart-ledger-terms-en":
-            mod = await import("@/content/legal/smart-ledger/terms.en.mdx");
+          case "delaybuy-terms-en":
+            mod = await import("@/content/legal/delaybuy/terms.en.mdx");
             break;
           default:
             throw new Error(`Unknown loader ID: ${loaderId}`);
