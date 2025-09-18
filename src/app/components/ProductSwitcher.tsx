@@ -161,14 +161,14 @@ export default function ProductSwitcher({ products }: ProductSwitcherProps) {
                                     <button key={p.title + i} onClick={() => setActive(i)} className={`group relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border transition-all ${activeItem ? "border-primary bg-primary/10" : "border-border hover:bg-accent"}`} title={p.title}>
                                         {mounted && getLogoUrl(p) && !imageErrors.has(getLogoUrl(p)!) ? (
                                             <Image
-                                                src={getLogoUrl(p)}
+                                                src={getLogoUrl(p)!}
                                                 alt={p.title}
                                                 width={36}
                                                 height={36}
                                                 className="object-contain"
                                                 onError={() => {
                                                     const src = getLogoUrl(p);
-                                                    setImageErrors(prev => new Set(prev).add(src!));
+                                                    if (src) setImageErrors(prev => new Set(prev).add(src));
                                                 }}
                                             />
                                         ) : (
@@ -207,14 +207,14 @@ export default function ProductSwitcher({ products }: ProductSwitcherProps) {
                             <div className="flex items-center gap-3 mb-3">
                                 {mounted && getLogoUrl(current) && !imageErrors.has(getLogoUrl(current)!) ? (
                                     <Image
-                                        src={getLogoUrl(current)}
+                                        src={getLogoUrl(current)!}
                                         alt={current?.title}
                                         width={32}
                                         height={32}
                                         className="object-contain"
                                         onError={() => {
                                             const src = getLogoUrl(current);
-                                            setImageErrors(prev => new Set(prev).add(src!));
+                                            if (src) setImageErrors(prev => new Set(prev).add(src));
                                         }}
                                     />
                                 ) : (
