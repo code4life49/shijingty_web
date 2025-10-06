@@ -18,7 +18,7 @@ export default function Home() {
                 zh: "智能延迟购买助手，帮助您理性消费。通过延迟购买机制和冲动干预提醒，让您做出更明智的消费决策，避免冲动购物，培养健康的消费习惯。",
                 en: "Smart delayed purchase assistant to help you make rational consumption decisions. Through delayed purchase mechanisms and impulse intervention reminders, make wiser spending choices, avoid impulse shopping, and develop healthy consumption habits."
             },
-            imageUrl: "/api/placeholder/300/600", // 这里可以替换为实际的应用截图
+            imageUrl: "/screenshots/delaybuy/main-1776x2556.png", // 这里可以替换为实际的应用截图
             logoUrl: "/logos/delaybuy/logo_light.png", // 默认使用浅色版本，ProductSwitcher 会根据主题切换
             appStoreUrl: "https://apps.apple.com/app/delaybuy",
             googlePlayUrl: "https://play.google.com/store/apps/details?id=com.shijingty.delaybuy",

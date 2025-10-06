@@ -191,12 +191,26 @@ export default function ProductSwitcher({ products }: ProductSwitcherProps) {
             <Card className="border border-border overflow-hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
                 <div className="lg:flex items-stretch">
                     {/* Left: Image */}
-                    <div className="lg:w-1/2 p-8 lg:p-12 flex justify-center items-center bg-muted/30">
-                        <div className="relative w-64 h-96 lg:w-80 lg:h-[520px] bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl overflow-hidden">
+                    <div className="lg:w-1/2 p-6 lg:p-8 flex justify-center items-center bg-muted/30">
+                        <div className="relative w-72 h-[28rem] lg:w-96 lg:h-[32rem] bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl overflow-hidden">
                             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-6xl lg:text-8xl opacity-30">📱</div>
-                            </div>
+                            {current?.imageUrl && !imageErrors.has(current.imageUrl) ? (
+                                <Image
+                                    src={current.imageUrl}
+                                    alt={current?.title || "Product Screenshot"}
+                                    fill
+                                    className="object-cover"
+                                    onError={() => {
+                                        if (current?.imageUrl) {
+                                            setImageErrors(prev => new Set(prev).add(current.imageUrl!));
+                                        }
+                                    }}
+                                />
+                            ) : (
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <div className="text-7xl lg:text-9xl opacity-30">📱</div>
+                                </div>
+                            )}
                             {current?.comingSoon ? <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs px-3 py-1 rounded-full font-medium">{t("products.comingSoon")}</div> : null}
                         </div>
                     </div>
