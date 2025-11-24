@@ -18,7 +18,7 @@ export const products: ProductEntry[] = [
     name: "DelayBuy",
     shortName: "DelayBuy",
     contactEmail: "contact@shijingty.com",
-    appStoreUrl: "https://apps.apple.com/app/delaybuy",
+    appStoreUrl: "https://apps.apple.com/us/app/delaybuy-think-before-you-buy/id6752294763",
     googlePlayUrl: "https://play.google.com/store/apps/details?id=com.shijingty.delaybuy",
     legalFlags: {
       analytics: ["Apple App Analytics", "Google Analytics"],

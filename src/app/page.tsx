@@ -20,7 +20,7 @@ export default function Home() {
             },
             imageUrl: "/screenshots/delaybuy/main-1776x2556.png", // 这里可以替换为实际的应用截图
             logoUrl: "/logos/delaybuy/logo_light.png", // 默认使用浅色版本，ProductSwitcher 会根据主题切换
-            appStoreUrl: "https://apps.apple.com/app/delaybuy",
+            appStoreUrl: "https://apps.apple.com/us/app/delaybuy-think-before-you-buy/id6752294763",
             googlePlayUrl: "https://play.google.com/store/apps/details?id=com.shijingty.delaybuy",
             features: {
                 zh: ["延迟购买机制", "冲动干预提醒", "消费决策记录", "节省金额统计", "智能分析激励"],
